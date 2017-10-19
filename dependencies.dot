@@ -1,0 +1,57 @@
+digraph a {
+    "OGLE_IV_Data" [style=filled, fillcolor="#9b59b6"];
+
+    "period" [style=filled, fillcolor="#1abc9c"];
+    //"amplitude_i" [style=filled, fillcolor="#1abc9c"];
+    "phi31_i_cosine" [style=filled, fillcolor="#1abc9c"];
+
+    "OGLE_IV_Data" -> "period";
+    //"OGLE_IV_Data" -> "amplitude_i";
+    "OGLE_IV_Data" -> "phi31_i_cosine";
+
+    //"i_band_light_curve" [style=filled, fillcolor="#3498db"];
+    "v_band_light_curve" [style=filled, fillcolor="#3498db"];
+
+    //"OGLE_IV_Data" -> "i_band_light_curve";
+    "OGLE_IV_Data" -> "v_band_light_curve";
+
+    "log_p" [style=filled, fillcolor="#1abc9c"];
+    "amplitude_v" [style=filled, fillcolor="#1abc9c"];
+    "phi31_i_sine" [style=filled, fillcolor="#1abc9c"];
+
+    "period" -> "log_p";
+    "v_band_light_curve" -> "amplitude_v";
+    "phi31_i_cosine" -> "phi31_i_sine";
+
+    "phi31_v_sine" [style=filled, fillcolor="#1abc9c"];
+
+    "metalicity_jk_v" [style=filled, fillcolor="#2ecc71"];
+
+    "period" -> "metalicity_jk_v";
+    "phi31_v_sine" -> "metalicity_jk_v";
+
+    "metalicity_jkzw_v" [style=filled, fillcolor="#2ecc71"];
+
+    "metalicity_jk_v" -> "metalicity_jkzw_v";
+
+    "metalicity_sandage" [style=filled, fillcolor="#2ecc71"];
+
+    "amplitude_v" -> "metalicity_sandage";
+    "log_p" -> "metalicity_sandage";
+
+    "metalicity_smolec" [style=filled, fillcolor="#2ecc71"];
+
+    "period" -> "metalicity_smolec";
+    "phi31_i_sine" -> "metalicity_smolec";
+
+    "metalicity_nemec" [style=filled, fillcolor="#2ecc71"];
+
+    "period" -> "metalicity_nemec";
+    "phi31_v_sine" -> "metalicity_nemec";
+
+    // Deb and Singh (2010)
+    //"phi31_i" -> "phi31_v_sine";
+
+    // Skowron et al. (2016)
+    "phi31_i_sine" -> "phi31_v_sine";
+}
